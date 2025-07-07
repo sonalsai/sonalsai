@@ -1,16 +1,25 @@
-## Hi there 👋
+# 👋 Hi there! I'm Sonal Sai
 
-<!--
-**sonalsai/sonalsai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a **software engineer** who loves turning ideas into reality with code. Passionate about building user-friendly, reliable, and scalable applications.
 
-Here are some ideas to get you started:
+🌟 **What I do**
+- Design and develop web applications
+- Write clean, maintainable code
+- Solve real-world problems with technology
+- Continuously learn and explore new tools
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+💻 **Tech Interests**
+- JavaScript, Node.js, React
+- REST APIs & WebSockets
+- Databases (MongoDB, SQL)
+- Cloud deployments & CI/CD
+
+⚡ **Fun Facts**
+- I talk to computers for a living—and they *sometimes* listen.
+- My ultimate stress reliever? **Watching anime!**
+
+📫 **Let’s Connect**
+- [GitHub](https://github.com/sonalsai)
+- [LinkedIn](#) *(Add your link here!)*
+
+Thanks for stopping by! Feel free to check out my projects and say hi! 🚀
