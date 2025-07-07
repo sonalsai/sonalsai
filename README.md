@@ -12,7 +12,6 @@ I'm a **software engineer** who loves turning ideas into reality with code. Pass
 - JavaScript, Node.js, React
 - REST APIs & WebSockets
 - Databases (MongoDB, SQL)
-- Cloud deployments & CI/CD
 
 ⚡ **Fun Facts**
 - I talk to computers for a living—and they *sometimes* listen.
