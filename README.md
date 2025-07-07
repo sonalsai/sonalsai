@@ -19,6 +19,6 @@ I'm a **software engineer** who loves turning ideas into reality with code. Pass
 
 📫 **Let’s Connect**
 - [GitHub](https://github.com/sonalsai)
-- [LinkedIn](#) *(Add your link here!)*
+- [LinkedIn](https://www.linkedin.com/in/sonalsai/)
 
 Thanks for stopping by! Feel free to check out my projects and say hi! 🚀
