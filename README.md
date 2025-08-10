@@ -1,76 +1,69 @@
-# 👋 Hi there! I'm Sonal Sai
+<!-- Futuristic GitHub Profile README for Sonal Sai -->
 
-I'm a **software engineer** who loves turning ideas into reality with code. Passionate about building user-friendly, reliable, and scalable applications.
+<h1 align="center">🚀 Hi there, I'm <span style="color:#61dafb;">Sonal Sai</span> 👋</h1>
+<h3 align="center">Front-End Focused | Full-Stack Capable | MERN Stack Enthusiast</h3>
 
----
-
-## 👨‍💻 About Me
-
-I'm Sonal Sai, a Full-Stack Software Engineer with a frontend-first mindset, passionate about crafting clean, performant, and user-centric web applications. I specialize in building responsive UIs, real-time experiences, and AI-integrated solutions that blend design and functionality seamlessly. 
-
-With a strong foundation in JavaScript, TypeScript, React, and Angular, I’ve worked on projects involving audio/video streaming, live transcription, and scalable backend APIs—bringing powerful functionality right to the user’s screen. I’m always eager to explore emerging frontend trends, optimize performance, and deliver rich user interactions.
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?size=22&center=true&vCenter=true&width=500&lines=Turning+Ideas+Into+Code;Crafting+Scalable+Web+Applications;Passionate+About+Clean+UI/UX;Always+Learning+%26+Innovating" alt="Typing SVG">
+</p>
 
 ---
 
-## 🛠️ Tech Stack
+## 👨‍💻 About Me  
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
-![Redux](https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
-![MERN Stack](https://img.shields.io/badge/MERN-3FA037?logo=javascript&logoColor=white)
-![REST APIs](https://img.shields.io/badge/REST-API-blue)
-![WebSockets](https://img.shields.io/badge/WebSockets-3D9BE9?logo=websockets&logoColor=white)
-![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socket.io&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
-![Audio/Video Streaming](https://img.shields.io/badge/Audio%2FVideo-Streaming-orange)
-![AI Integration](https://img.shields.io/badge/AI-Integration-purple)
-![Speech-to-Text](https://img.shields.io/badge/Speech--to--Text-00A6FB)
-![Real-time Transcription](https://img.shields.io/badge/Real--time-Transcription-1DB954)
-![JWT](https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white)
-![Responsive Design](https://img.shields.io/badge/Responsive-Design-blueviolet)
-![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VSCode-007ACC?logo=visual-studio-code&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white)
-![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?logo=mongodb&logoColor=white)
-![React Developer Tools](https://img.shields.io/badge/React%20Developer%20Tools-61DAFB?logo=react&logoColor=black)
-![Redux DevTools](https://img.shields.io/badge/Redux%20DevTools-764ABC?logo=redux&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-CB3837?logo=npm&logoColor=white)
-![Chrome DevTools](https://img.shields.io/badge/Chrome-DevTools-yellow)
-![Jira](https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=white)
+I'm **Sonal Sai**, a **Full-Stack Software Engineer** with a **frontend-first mindset**.  
+I specialize in building **responsive, scalable, and high-performance** web apps using modern frameworks and best practices.  
+My expertise spans **real-time data**, **audio/video streaming**, **AI integration**, and creating **rich user experiences**.
+
+💡 *Clean code, scalable architecture, and user-focused design are my core principles.*
 
 ---
 
-## 🚀 Highlight Projects
+## 🛠️ Tech Stack  
 
-- [Weather App](https://github.com/sonalsai/weather-app) — A modern weather application delivering current forecasts and weather data with a sleek UI.
-- [Guess The Number](https://github.com/sonalsai/guessTheNumber) — A fun interactive number guessing game built with JavaScript.
-- [Twilio Voice Call Backend](https://github.com/sonalsai/Twilio-Voice-Call-Backend) — Backend service for handling Twilio-powered voice calls, including call routing, authentication, and logging.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,redux,angular,nodejs,express,mongodb,git,github,vscode,postman,redis,npm&perline=8" />
+</p>
 
-
----
-
-## 📊 Stats
-
-![Sonal Sai's GitHub Stats](https://github-readme-stats.vercel.app/api?username=sonalsai&show_icons=true&theme=default)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=sonalsai&theme=default)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sonalsai&layout=compact)
+### Other Tools & Skills
+- **Real-Time Tech:** WebSockets, Socket.IO, Live Transcription, Audio/Video Streaming  
+- **API Development:** REST APIs, JWT Authentication, Scalable Backend Services  
+- **Performance:** Code Splitting, Lazy Loading, Caching Strategies  
+- **UI/UX:** Responsive Design, Accessibility, Interactive Animations  
 
 ---
 
-## 🤝 Connect With Me
+## 🚀 Highlight Projects  
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sonalsai/)
-[![Email](https://img.shields.io/badge/-Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:sonalsai777@gmail.com)
-
+- **[Weather App](https://github.com/sonalsai/weather-app)** — Modern UI delivering real-time weather forecasts.  
+- **[Guess The Number](https://github.com/sonalsai/guessTheNumber)** — Fun JavaScript-based number guessing game.  
+- **[Twilio Voice Call Backend](https://github.com/sonalsai/Twilio-Voice-Call-Backend)** — Scalable backend for handling Twilio-powered voice calls.  
 
 ---
 
-_Thanks for stopping by! Feel free to check out my projects and say hi! 🚀_
+## 📊 GitHub Stats  
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=sonalsai&show_icons=true&theme=tokyonight" height="150" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sonalsai&theme=tokyonight" height="150" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sonalsai&layout=compact&theme=tokyonight" height="150" />
+</p>
+
+---
+
+## 🤝 Connect With Me  
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/sonalsai/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="mailto:sonalsai777@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+</p>
+
+---
+
+<p align="center">
+  <i>💬 “Code is like humor. When you have to explain it, it’s bad.”</i>
+</p>
+
