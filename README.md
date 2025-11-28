@@ -1,4 +1,4 @@
-<!-- Futuristic GitHub Profile README for Sonal Sai -->
+<!-- Futuristic GitHub Profile README for Sonal Sai
 
 <h1 align="center">🚀 Hi there, I'm <span style="color:#61dafb;">Sonal Sai</span> 👋</h1>
 <h3 align="center">Front-End Focused | Full-Stack Capable | MERN Stack Enthusiast</h3>
@@ -66,4 +66,4 @@ My expertise spans **real-time data**, **audio/video streaming**, **AI integrati
 <p align="center">
   <i>💬 “Code is like humor. When you have to explain it, it’s bad.”</i>
 </p>
-
+ -->
