@@ -58,14 +58,14 @@
 }
 
 .badge {
-  color: #00ffa6;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.9rem;
   padding: 8px 16px;
-  border: 1px solid #00ffa6;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 100px;
-  background: rgba(0, 255, 166, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 166, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
   width: fit-content;
   font-weight: 500;
 }
@@ -108,14 +108,14 @@
   overflow: hidden;
 
   &Primary {
-    background: rgba(0, 255, 166, 0.1);
-    border: 1px solid #00ffa6;
-    color: #00ffa6;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
 
     &:hover {
-      background: rgba(0, 255, 166, 0.25);
+      background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(12px);
-      box-shadow: 0 4px 16px rgba(0, 255, 166, 0.2);
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
       padding-right: 48px;
     }
   }
