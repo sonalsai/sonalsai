@@ -104,8 +104,14 @@ const HeroSection = () => {
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
             initial={{
-              height: "460px",
-              maxHeight: "460px",
+              height:
+                typeof window !== "undefined" && window.innerWidth <= 768
+                  ? "220px"
+                  : "460px",
+              maxHeight:
+                typeof window !== "undefined" && window.innerWidth <= 768
+                  ? "220px"
+                  : "460px",
               minHeight: "220px",
               opacity: 0,
               borderRadius: "24px",
