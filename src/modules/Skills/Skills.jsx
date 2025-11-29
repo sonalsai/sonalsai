@@ -286,10 +286,14 @@ const Skills = () => {
                 key={skill.name}
                 className={styles.skillCard}
                 layout
-                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: idx * 0.05,
+                  ease: [0.25, 0.8, 0.25, 1],
+                }}
+                viewport={{ once: false, amount: 0.1 }}
               >
                 <div className={styles.iconWrapper}>{skill.icon}</div>
                 <h3 className={styles.skillName}>{skill.name}</h3>
