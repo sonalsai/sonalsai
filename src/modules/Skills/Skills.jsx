@@ -280,18 +280,18 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <motion.div className={styles.skillsGrid} layout>
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="wait">
             {skills[activeCategory].map((skill, idx) => (
               <motion.div
                 key={skill.name}
                 className={styles.skillCard}
-                layout
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.9 }}
                 transition={{
-                  duration: 0.5,
-                  delay: idx * 0.05,
-                  ease: [0.25, 0.8, 0.25, 1],
+                  duration: 0.3,
+                  delay: idx * 0.03,
+                  ease: "easeOut",
                 }}
                 viewport={{ once: false, amount: 0.1 }}
               >

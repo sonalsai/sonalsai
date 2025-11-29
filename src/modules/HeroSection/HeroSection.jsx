@@ -11,7 +11,7 @@ const HeroSection = () => {
   const [isImageHovered, setIsImageHovered] = useState(false);
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="hero">
       <div className={styles.backgroundCode}>
         {/* Abstract code background */}
         <div className={styles.codeRow}>
