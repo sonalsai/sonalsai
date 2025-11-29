@@ -153,27 +153,38 @@
 }
 
 .imageWrapper {
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  height: 300px;
   position: relative;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
 
   @media (max-width: 768px) {
-    width: 240px;
-    height: 240px;
+    height: auto;
+    padding: 15px;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 
 .profileImage {
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
   display: block;
   border-radius: 50%;
-  box-shadow: 0 0 25px rgba(0, 255, 166, 0.4);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
   position: relative;
-  z-index: 3;
+  z-index: 4;
   animation: float 6s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+  }
 }
 
 @keyframes float {
@@ -190,8 +201,8 @@
 
 .placeholder {
   display: none;
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 280px;
   justify-content: center;
   align-items: center;
   background: #111;
@@ -199,21 +210,24 @@
   font-size: 5rem;
   font-weight: 700;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
+  position: relative;
+  z-index: 4;
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
 }
 
 .profileCard {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 440px;
+  position: relative;
+  width: 360px;
   padding: 0;
+  cursor: pointer;
 
-  /* Enhanced Glass Effect */
+  /* Premium Glass Effect */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.06),
@@ -221,11 +235,11 @@
   );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 255, 166, 0.25);
-  box-shadow: 0 8px 30px rgba(0, 255, 166, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
 
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: auto;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -235,62 +249,93 @@
   transition: all 0.4s ease;
 
   &:hover {
-    transform: translateX(-50%) translateY(-6px) scale(1.01);
-    box-shadow: 0 15px 40px rgba(0, 255, 166, 0.2);
-    border-color: #00ffa6;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   @media (max-width: 768px) {
-    width: 240px;
+    width: calc(100vw - 40px);
+    max-width: 100%;
+    height: 180px;
+    border-radius: 20px;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    margin: 0 auto;
   }
 }
 
 .cardContent {
   text-align: center;
   width: 100%;
-  margin-top: 350px;
   padding: 0 30px 30px;
   opacity: 0;
   transition: opacity 0.3s ease;
 
   @media (max-width: 768px) {
-    margin-top: 250px;
+    padding: 0 0 0 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
 .cardName {
   font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: $main-text;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    margin: 0 0 4px 0;
   }
 }
 
 .cardPosition {
   font-family: "Poppins", sans-serif;
-  font-size: 1.1rem;
-  color: #00ffa6;
-  font-weight: 500;
+  font-size: 1rem;
+  color: #c9c9c9;
+  font-weight: 400;
+  opacity: 0.7;
+  margin: 0 0 6px 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    margin: 0 0 3px 0;
+  }
 }
 
 .cardExperience {
   font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  opacity: 0.75;
-  margin: 0 0 8px 0;
+  color: #8a8a8a;
+  opacity: 0.55;
+  margin: 0 0 12px 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin: 0 0 6px 0;
+  }
 }
 
 .cardMotto {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8a8a8a;
+  opacity: 0.45;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
 }
 
 .scrollIndicator {

@@ -98,53 +98,54 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div
-            className={styles.imageWrapper}
+          {/* Glassmorphic Card */}
+          <motion.div
+            className={styles.profileCard}
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
+            initial={{
+              height: "360px",
+              opacity: 0,
+              borderRadius: "50%",
+            }}
+            animate={{
+              height: "100%",
+              maxHeight: "460px",
+              minHeight: "220px",
+              opacity: 1,
+              borderRadius: "24px",
+            }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            {/* Profile Image - Always Visible */}
-            <img
-              src={profileImg}
-              alt="Sonal Sai"
-              className={styles.profileImage}
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.nextSibling.style.display = "flex";
-              }}
-            />
-            <div className={styles.placeholder}>
-              <span>SS</span>
+            {/* Image Wrapper */}
+            <div className={styles.imageWrapper}>
+              <img
+                src={profileImg}
+                alt="Sonal Sai"
+                className={styles.profileImage}
+                onError={(e) => {
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "flex";
+                }}
+              />
+              <div className={styles.placeholder}>
+                <span>SS</span>
+              </div>
             </div>
 
-            {/* Glassmorphic Card - Appears on Hover */}
+            {/* Card Content */}
             <motion.div
-              className={styles.profileCard}
-              initial={{
-                height: "360px",
-                opacity: 0,
-                borderRadius: "50%",
-              }}
-              animate={{
-                height: isImageHovered ? "500px" : "360px",
-                opacity: isImageHovered ? 1 : 0,
-                borderRadius: isImageHovered ? "24px" : "50%",
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              className={styles.cardContent}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
             >
-              <motion.div
-                className={styles.cardContent}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isImageHovered ? 1 : 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              >
-                <h3 className={styles.cardName}>Sonal Sai</h3>
-                <p className={styles.cardPosition}>Frontend Developer</p>
-                <p className={styles.cardExperience}>1.6 Years Experience</p>
-                <p className={styles.cardMotto}>UI • Logic • Performance</p>
-              </motion.div>
+              <h3 className={styles.cardName}>Sonal Sai</h3>
+              <p className={styles.cardPosition}>Frontend Developer</p>
+              <p className={styles.cardExperience}>1.6 Years Experience</p>
+              <p className={styles.cardMotto}>UI • Logic • Performance</p>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
