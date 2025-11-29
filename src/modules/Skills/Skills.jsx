@@ -281,7 +281,7 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <motion.div className={styles.skillsGrid} layout>
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {skills[activeCategory].map((skill, idx) => (
               <motion.div
                 key={skill.name}
