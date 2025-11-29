@@ -25,8 +25,9 @@ import {
   MdSubtitles,
   MdAutoAwesome,
 } from "react-icons/md";
-import { TbBrandSocketIo } from "react-icons/tb";
+import { TbBrandSocketIo, TbRocket, TbSettings, TbWifi } from "react-icons/tb";
 import { AiOutlineAudio } from "react-icons/ai";
+import { BiPalette } from "react-icons/bi";
 
 import styles from "./Skills.module.scss";
 
@@ -42,11 +43,11 @@ const Skills = () => {
   };
 
   const categories = [
-    { id: "frontend", label: "Frontend", icon: "🎨" },
-    { id: "backend", label: "Backend", icon: "⚙️" },
-    { id: "realtime", label: "Real-Time", icon: "📡" },
-    { id: "tools", label: "Tools", icon: "🚀" },
-    { id: "other", label: "Other", icon: "🔧" },
+    { id: "frontend", label: "Frontend", icon: <BiPalette /> },
+    { id: "backend", label: "Backend", icon: <TbSettings /> },
+    { id: "realtime", label: "Real-Time", icon: <TbWifi /> },
+    { id: "tools", label: "Tools", icon: <TbRocket /> },
+    { id: "other", label: "Other", icon: <MdAutoAwesome /> },
   ];
 
   const skills = {
