@@ -104,9 +104,11 @@ const HeroSection = () => {
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
             initial={{
-              height: "360px",
+              height: "460px",
+              maxHeight: "460px",
+              minHeight: "220px",
               opacity: 0,
-              borderRadius: "50%",
+              borderRadius: "24px",
             }}
             animate={{
               height: "100%",
@@ -136,9 +138,9 @@ const HeroSection = () => {
             {/* Card Content */}
             <motion.div
               className={styles.cardContent}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.6 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             >
               <h3 className={styles.cardName}>Sonal Sai</h3>
               <p className={styles.cardPosition}>Frontend Developer</p>
