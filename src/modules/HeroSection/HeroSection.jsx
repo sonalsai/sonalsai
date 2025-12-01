@@ -10,6 +10,16 @@ const HeroSection = () => {
   const [isProjectsHovered, setIsProjectsHovered] = useState(false);
   const [isImageHovered, setIsImageHovered] = useState(false);
 
+  const calculateExperience = () => {
+    const startDate = new Date("2024-06-10");
+    const currentDate = new Date();
+    const diffTime = Math.abs(currentDate - startDate);
+    const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+    return diffYears.toFixed(1);
+  };
+
+  const experience = calculateExperience();
+
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.backgroundCode}>
@@ -150,7 +160,9 @@ const HeroSection = () => {
             >
               <h3 className={styles.cardName}>Sonal Sai</h3>
               <p className={styles.cardPosition}>Frontend Developer</p>
-              <p className={styles.cardExperience}>1.6 Years Experience</p>
+              <p className={styles.cardExperience}>
+                {experience} Years Experience
+              </p>
               <p className={styles.cardMotto}>UI • Logic • Performance</p>
             </motion.div>
           </motion.div>

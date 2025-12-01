@@ -142,6 +142,12 @@ const Skills = () => {
         icon: <AiOutlineAudio />,
         tags: ["STT", "AI", "Transcription"],
       },
+      {
+        name: "Real-time transcription",
+        context: "Live audio to text conversion",
+        icon: <MdSubtitles />,
+        tags: ["Live", "Transcription", "STT"],
+      },
     ],
 
     tools: [
@@ -207,18 +213,6 @@ const Skills = () => {
         context: "Real-time audio flow architecture",
         icon: <MdWaves />,
         tags: ["Pipeline", "Flow", "Real-time"],
-      },
-      {
-        name: "Deepgram STT",
-        context: "Speech-to-text API integration",
-        icon: <MdRecordVoiceOver />,
-        tags: ["STT", "AI", "Integration"],
-      },
-      {
-        name: "Real-time transcription",
-        context: "Live audio to text conversion",
-        icon: <MdSubtitles />,
-        tags: ["Live", "Transcription", "STT"],
       },
       {
         name: "AI streaming pipelines",
