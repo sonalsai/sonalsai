@@ -138,7 +138,9 @@
   color: $main-text;
   font-size: 1.8rem;
   cursor: pointer;
+  cursor: pointer;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 
   @media (max-width: 768px) {
     display: block;
@@ -174,6 +176,34 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.profileWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarName {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $main-text;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.sidebarTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  color: $muted-text;
+  font-weight: 400;
+}
+
 .sidebarProfile {
   width: 50px;
   height: 50px;
@@ -188,8 +218,10 @@
   color: $main-text;
   font-size: 2rem;
   cursor: pointer;
+  cursor: pointer;
   padding: 0;
   transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     transform: rotate(90deg);
@@ -211,6 +243,7 @@
   padding: 16px 0;
   text-align: left;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.2s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
@@ -230,6 +263,7 @@
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease;
 
   &:hover {

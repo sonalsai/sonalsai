@@ -150,11 +150,17 @@ const Navbar = () => {
       {/* Mobile Sidebar */}
       <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
         <div className={styles.sidebarHeader}>
-          <img
-            src={profileImg}
-            alt="Profile"
-            className={styles.sidebarProfile}
-          />
+          <div className={styles.profileWrapper}>
+            <img
+              src={profileImg}
+              alt="Profile"
+              className={styles.sidebarProfile}
+            />
+            <div className={styles.profileInfo}>
+              <span className={styles.sidebarName}>Sonal Sai</span>
+              <span className={styles.sidebarTitle}>Frontend Developer</span>
+            </div>
+          </div>
           <button
             className={styles.closeBtn}
             onClick={() => setSidebarOpen(false)}
