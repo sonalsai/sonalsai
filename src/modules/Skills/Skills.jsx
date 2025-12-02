@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaReact, FaNodeJs, FaGitAlt, FaAngular } from "react-icons/fa";
 import {
@@ -21,7 +21,6 @@ import {
   MdFiberManualRecord,
   MdGraphicEq,
   MdWaves,
-  MdRecordVoiceOver,
   MdSubtitles,
   MdAutoAwesome,
 } from "react-icons/md";

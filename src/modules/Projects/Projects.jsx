@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import {
@@ -8,9 +8,7 @@ import {
   SiExpress,
   SiSocketdotio,
   SiTypescript,
-  SiJavascript,
   SiRedux,
-  SiTailwindcss,
   SiFramer,
 } from "react-icons/si";
 import styles from "./Projects.module.scss";
@@ -98,7 +96,7 @@ const Projects = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleManualImageChange = (projectId) => {
     setActiveImageIndex((prev) => {

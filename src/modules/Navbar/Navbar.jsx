@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import profileImg from "../../assets/profile.jpg";
 import { HiMenuAlt3, HiX } from "react-icons/hi";

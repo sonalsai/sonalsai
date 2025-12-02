@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiDownload } from "react-icons/hi";
 import { BsArrowRight } from "react-icons/bs";
@@ -8,7 +8,6 @@ import profileImg from "../../assets/profile.jpg";
 const HeroSection = () => {
   const [isDownloadHovered, setIsDownloadHovered] = useState(false);
   const [isProjectsHovered, setIsProjectsHovered] = useState(false);
-  const [isImageHovered, setIsImageHovered] = useState(false);
 
   const calculateExperience = () => {
     const startDate = new Date("2024-06-10");
@@ -111,8 +110,6 @@ const HeroSection = () => {
           {/* Glassmorphic Card */}
           <motion.div
             className={styles.profileCard}
-            onMouseEnter={() => setIsImageHovered(true)}
-            onMouseLeave={() => setIsImageHovered(false)}
             initial={{
               height:
                 typeof window !== "undefined" && window.innerWidth <= 768
