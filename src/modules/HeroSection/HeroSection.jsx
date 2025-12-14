@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { HiDownload } from "react-icons/hi";
 import { BsArrowRight } from "react-icons/bs";
 import styles from "./HeroSection.module.scss";
-import profileImg from "../../assets/profile.jpg";
+import profileImg from "../../assets/sonalsai.jpeg";
 
 const HeroSection = () => {
   const [isDownloadHovered, setIsDownloadHovered] = useState(false);
