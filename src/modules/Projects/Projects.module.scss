@@ -1,0 +1,423 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.projects {
+  background: $main-bg;
+  padding: 40px 0;
+  position: relative;
+  scroll-margin-top: 100px;
+}
+
+.container {
+  @include container;
+}
+
+/* ========== HEADER ========== */
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #fff, #9e9e9e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: $muted-text;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* ========== NAVIGATION WRAPPER ========== */
+.navigationWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  position: absolute;
+  top: 300px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  // background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  // backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+.navLeft {
+  left: 10px;
+}
+
+.navRight {
+  right: 10px;
+}
+
+/* ========== PROJECTS LIST ========== */
+.projectsList {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 20px 5% 40px 5%;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+
+  /* Hide Scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* ========== PROJECT CARD ========== */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 450px;
+  min-width: 450px;
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.05),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 968px) {
+    gap: 24px;
+    padding: 30px;
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 90vw;
+    max-width: 90vw;
+    padding: 24px;
+    gap: 20px;
+  }
+}
+
+/* ========== PROJECT INFO ========== */
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  height: 100%;
+}
+
+/* ========== BADGES ========== */
+.badgesRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.statusBadge,
+.deploymentBadge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.statusCompleted {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.statusInProgress {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.statusOnHold {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.deploymentBadge {
+  &.deployed {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    position: relative;
+
+    &::before {
+      content: "●";
+      margin-right: 6px;
+      color: #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+
+  &.notDeployed {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+
+    &::before {
+      content: "●";
+      margin-right: 6px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ========== PROJECT NAME ========== */
+.projectName {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+
+/* ========== TECHNOLOGIES ========== */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.techIcon {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+}
+
+.techName {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ========== DESCRIPTION ========== */
+.description {
+  color: $muted-text;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ========== ACTIONS ========== */
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      transform: translateX(100%);
+    }
+
+    .arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  &.primary {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  svg {
+    font-size: 1.1rem;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 0;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .stackWrapper {
+    aspect-ratio: 16/10;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    .actionButton {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

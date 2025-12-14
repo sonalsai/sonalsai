@@ -1,9 +1,10 @@
-@use 'variables' as *;
-@use 'reset';
+@use "variables" as *;
+@use "reset";
 
 body {
   background-color: $main-bg;
   color: $main-text;
+  -webkit-tap-highlight-color: transparent;
 }
 
 // Global utility classes can go here if needed, but prefer modules
