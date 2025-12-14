@@ -34,6 +34,56 @@
   font-size: 1.05rem;
 }
 
+/* ========== NAVIGATION WRAPPER ========== */
+.navigationWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  position: absolute;
+  top: 300px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  // background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  // backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+.navLeft {
+  left: 10px;
+}
+
+.navRight {
+  right: 10px;
+}
+
 /* ========== PROJECTS LIST ========== */
 .projectsList {
   display: flex;

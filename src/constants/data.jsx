@@ -34,7 +34,7 @@ export const skillCategories = [
   { id: "backend", label: "Backend", icon: <TbSettings /> },
   { id: "realtime", label: "Real-Time", icon: <TbWifi /> },
   { id: "tools", label: "Tools", icon: <TbRocket /> },
-  { id: "other", label: "Other", icon: <MdAutoAwesome /> },
+  // { id: "other", label: "Other", icon: <MdAutoAwesome /> },
 ];
 
 export const skills = {
@@ -112,10 +112,10 @@ export const skills = {
       tags: ["Bidirectional", "Persistent", "Live"],
     },
     {
-      name: "Socket.IO",
-      context: "Low-latency messaging",
+      name: "WebRTC",
+      context: "Real-time communication",
       icon: <SiSocketdotio />,
-      tags: ["Events", "Rooms", "Broadcasting"],
+      tags: ["WebRTC", "Real-time", "Communication"],
     },
     {
       name: "Twilio Media Streams",
@@ -170,44 +170,44 @@ export const skills = {
     },
   ],
 
-  other: [
-    {
-      name: "FFmpeg",
-      context: "Audio processing & transformation",
-      icon: <MdAudiotrack />,
-      tags: ["Encoding", "Format", "Processing"],
-    },
-    {
-      name: "MediaRecorder API",
-      context: "Browser audio capture",
-      icon: <MdMic />,
-      tags: ["Recording", "Browser", "Capture"],
-    },
-    {
-      name: "Recorder.js",
-      context: "Raw audio buffer handling",
-      icon: <MdFiberManualRecord />,
-      tags: ["Buffers", "WAV", "PCM"],
-    },
-    {
-      name: "PCM / PCMU codecs",
-      context: "Audio encoding standards",
-      icon: <MdGraphicEq />,
-      tags: ["Codecs", "Compression", "Standards"],
-    },
-    {
-      name: "Audio Streaming Pipelines",
-      context: "Real-time audio flow architecture",
-      icon: <MdWaves />,
-      tags: ["Pipeline", "Flow", "Real-time"],
-    },
-    {
-      name: "AI streaming pipelines",
-      context: "Continuous AI data processing",
-      icon: <MdAutoAwesome />,
-      tags: ["AI", "Streaming", "Processing"],
-    },
-  ],
+  // other: [
+  //   {
+  //     name: "FFmpeg",
+  //     context: "Audio processing & transformation",
+  //     icon: <MdAudiotrack />,
+  //     tags: ["Encoding", "Format", "Processing"],
+  //   },
+  //   {
+  //     name: "MediaRecorder API",
+  //     context: "Browser audio capture",
+  //     icon: <MdMic />,
+  //     tags: ["Recording", "Browser", "Capture"],
+  //   },
+  //   {
+  //     name: "Recorder.js",
+  //     context: "Raw audio buffer handling",
+  //     icon: <MdFiberManualRecord />,
+  //     tags: ["Buffers", "WAV", "PCM"],
+  //   },
+  //   {
+  //     name: "PCM / PCMU codecs",
+  //     context: "Audio encoding standards",
+  //     icon: <MdGraphicEq />,
+  //     tags: ["Codecs", "Compression", "Standards"],
+  //   },
+  //   {
+  //     name: "Audio Streaming Pipelines",
+  //     context: "Real-time audio flow architecture",
+  //     icon: <MdWaves />,
+  //     tags: ["Pipeline", "Flow", "Real-time"],
+  //   },
+  //   {
+  //     name: "AI streaming pipelines",
+  //     context: "Continuous AI data processing",
+  //     icon: <MdAutoAwesome />,
+  //     tags: ["AI", "Streaming", "Processing"],
+  //   },
+  // ],
 };
 
 // ========== PROJECTS DATA ==========
@@ -238,6 +238,7 @@ export const projects = [
       { name: "Vite", icon: <SiReact /> },
       { name: "SCSS", icon: <SiReact /> },
       { name: "WebSockets", icon: <SiSocketdotio /> },
+      { name: "Node.js", icon: <SiNodedotjs /> },
     ],
     status: "inprogress",
     deployed: true,
