@@ -11,11 +11,19 @@ function App() {
   }, []);
 
   return (
-    <main>
-      <Navbar />
-      <HeroSection />
-      <Skills />
-      <Projects />
+    <main role="main">
+      <header role="banner">
+        <Navbar />
+      </header>
+      <section id="hero" aria-label="Hero Section">
+        <HeroSection />
+      </section>
+      <section id="skills" aria-label="Skills Section">
+        <Skills />
+      </section>
+      <section id="projects" aria-label="Projects Section">
+        <Projects />
+      </section>
     </main>
   );
 }
