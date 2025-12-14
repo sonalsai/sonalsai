@@ -1,226 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaReact, FaNodeJs, FaGitAlt, FaAngular } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiRedux,
-  SiFramer,
-  SiExpress,
-  SiMongodb,
-  SiSocketdotio,
-  SiTwilio,
-  SiPostman,
-  SiJavascript,
-  SiJest,
-} from "react-icons/si";
-import {
-  MdDevices,
-  MdPlayCircleOutline,
-  MdAudiotrack,
-  MdMic,
-  MdFiberManualRecord,
-  MdGraphicEq,
-  MdWaves,
-  MdSubtitles,
-  MdAutoAwesome,
-} from "react-icons/md";
-import { TbBrandSocketIo, TbRocket, TbSettings, TbWifi } from "react-icons/tb";
-import { AiOutlineAudio } from "react-icons/ai";
-import { BiPalette } from "react-icons/bi";
-
+import { skillCategories, skills } from "../../constants/data";
 import styles from "./Skills.module.scss";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("frontend");
-
-  const categoryDescriptions = {
-    frontend: "Building interactive, scalable, and aesthetic web experiences.",
-    backend: "Server-side logic, APIs, and scalable data architecture.",
-    realtime: "Low-latency systems for audio, streaming, and live data.",
-    tools: "Development workflow, testing, and productivity tools.",
-    other: "Audio processing, AI pipelines, and specialized technologies.",
-  };
-
-  const categories = [
-    { id: "frontend", label: "Frontend", icon: <BiPalette /> },
-    { id: "backend", label: "Backend", icon: <TbSettings /> },
-    { id: "realtime", label: "Real-Time", icon: <TbWifi /> },
-    { id: "tools", label: "Tools", icon: <TbRocket /> },
-    { id: "other", label: "Other", icon: <MdAutoAwesome /> },
-  ];
-
-  const skills = {
-    frontend: [
-      {
-        name: "React.js",
-        context: "UI architecture & interactive experiences",
-        icon: <FaReact />,
-        tags: ["UI", "Components", "Hooks"],
-      },
-      {
-        name: "Angular",
-        context: "Scalable enterprise applications",
-        icon: <FaAngular />,
-        tags: ["Enterprise", "TypeScript", "RxJS"],
-      },
-      {
-        name: "JavaScript",
-        context: "Core web interactivity",
-        icon: <SiJavascript />,
-        tags: ["ES6+", "DOM", "Async"],
-      },
-      {
-        name: "TypeScript",
-        context: "Strong typing for scalable apps",
-        icon: <SiTypescript />,
-        tags: ["Types", "Interfaces", "Generics"],
-      },
-      {
-        name: "Redux Toolkit",
-        context: "Global state & async flows",
-        icon: <SiRedux />,
-        tags: ["State", "Actions", "Slices"],
-      },
-      {
-        name: "Framer Motion",
-        context: "Smooth animations & transitions",
-        icon: <SiFramer />,
-        tags: ["Animation", "Gestures", "Variants"],
-      },
-      {
-        name: "Responsive Design",
-        context: "Adaptive layouts across devices",
-        icon: <MdDevices />,
-        tags: ["Mobile", "Grid", "Flex"],
-      },
-    ],
-
-    backend: [
-      {
-        name: "Node.js",
-        context: "APIs, event-driven logic, servers",
-        icon: <FaNodeJs />,
-        tags: ["Runtime", "Event-Loop", "Async"],
-      },
-      {
-        name: "Express.js",
-        context: "Routing, middleware, REST services",
-        icon: <SiExpress />,
-        tags: ["API", "Routing", "Middleware"],
-      },
-      {
-        name: "MongoDB",
-        context: "Data modeling & scalable storage",
-        icon: <SiMongodb />,
-        tags: ["NoSQL", "Schemas", "Queries"],
-      },
-    ],
-
-    realtime: [
-      {
-        name: "WebSockets",
-        context: "Live communication systems",
-        icon: <TbBrandSocketIo />,
-        tags: ["Bidirectional", "Persistent", "Live"],
-      },
-      {
-        name: "Socket.IO",
-        context: "Low-latency messaging",
-        icon: <SiSocketdotio />,
-        tags: ["Events", "Rooms", "Broadcasting"],
-      },
-      {
-        name: "Twilio Media Streams",
-        context: "Real-time audio ingestion",
-        icon: <SiTwilio />,
-        tags: ["Audio", "Streaming", "Telephony"],
-      },
-      {
-        name: "Deepgram",
-        context: "Streaming speech-to-text pipelines",
-        icon: <AiOutlineAudio />,
-        tags: ["STT", "AI", "Transcription"],
-      },
-      {
-        name: "Real-time transcription",
-        context: "Live audio to text conversion",
-        icon: <MdSubtitles />,
-        tags: ["Live", "Transcription", "STT"],
-      },
-    ],
-
-    tools: [
-      {
-        name: "Git & GitHub",
-        context: "Version control & workflows",
-        icon: <FaGitAlt />,
-        tags: ["Versioning", "Branching", "CI/CD"],
-      },
-      {
-        name: "Postman",
-        context: "API testing & debugging",
-        icon: <SiPostman />,
-        tags: ["Testing", "REST", "Automation"],
-      },
-      {
-        name: "MongoDB Atlas",
-        context: "Cloud database management",
-        icon: <SiMongodb />,
-        tags: ["Cloud", "Monitoring", "Scaling"],
-      },
-      {
-        name: "Playwright",
-        context: "End-to-end testing",
-        icon: <MdPlayCircleOutline />,
-        tags: ["E2E", "Testing", "Automation"],
-      },
-      {
-        name: "Jest",
-        context: "Unit & integration testing",
-        icon: <SiJest />,
-        tags: ["Unit", "Mocking", "Coverage"],
-      },
-    ],
-
-    other: [
-      {
-        name: "FFmpeg",
-        context: "Audio processing & transformation",
-        icon: <MdAudiotrack />,
-        tags: ["Encoding", "Format", "Processing"],
-      },
-      {
-        name: "MediaRecorder API",
-        context: "Browser audio capture",
-        icon: <MdMic />,
-        tags: ["Recording", "Browser", "Capture"],
-      },
-      {
-        name: "Recorder.js",
-        context: "Raw audio buffer handling",
-        icon: <MdFiberManualRecord />,
-        tags: ["Buffers", "WAV", "PCM"],
-      },
-      {
-        name: "PCM / PCMU codecs",
-        context: "Audio encoding standards",
-        icon: <MdGraphicEq />,
-        tags: ["Codecs", "Compression", "Standards"],
-      },
-      {
-        name: "Audio Streaming Pipelines",
-        context: "Real-time audio flow architecture",
-        icon: <MdWaves />,
-        tags: ["Pipeline", "Flow", "Real-time"],
-      },
-      {
-        name: "AI streaming pipelines",
-        context: "Continuous AI data processing",
-        icon: <MdAutoAwesome />,
-        tags: ["AI", "Streaming", "Processing"],
-      },
-    ],
-  };
 
   return (
     <section className={styles.skills} id="skills">
@@ -233,16 +17,16 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Technical Arsenal</h2>
+          <h2 className={styles.title}>Skills and Technologies</h2>
           <p className={styles.subtitle}>
-            A refined set of capabilities shaped through real-world problem
-            solving
+            Skills that I have acquired through hands-on experience and
+            self-directed learning
           </p>
         </motion.div>
 
         {/* Category Selector */}
         <div className={styles.categories}>
-          {categories.map((cat, index) => (
+          {skillCategories.map((cat, index) => (
             <motion.button
               key={cat.id}
               className={`${styles.categoryBtn} ${
@@ -260,17 +44,6 @@ const Skills = () => {
             </motion.button>
           ))}
         </div>
-
-        {/* Category Description */}
-        <motion.p
-          className={styles.categoryDescription}
-          key={activeCategory}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {categoryDescriptions[activeCategory]}
-        </motion.p>
 
         {/* Skills Grid */}
         <motion.div className={styles.skillsGrid} layout>
