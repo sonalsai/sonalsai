@@ -4,6 +4,7 @@ import { HiDownload } from "react-icons/hi";
 import { BsArrowRight } from "react-icons/bs";
 import styles from "./HeroSection.module.scss";
 import profileImg from "../../assets/sonalsai.jpeg";
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const HeroSection = () => {
   const [isDownloadHovered, setIsDownloadHovered] = useState(false);
@@ -84,6 +85,7 @@ const HeroSection = () => {
               className={`${styles.btn} ${styles.btnSecondary}`}
               onMouseEnter={() => setIsProjectsHovered(true)}
               onMouseLeave={() => setIsProjectsHovered(false)}
+              onClick={() => scrollToSection("projects")}
             >
               <span>See Projects</span>
               <motion.span

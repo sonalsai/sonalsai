@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import profileImg from "../../assets/sonalsai.jpeg";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { scrollToSection as scrollToSectionUtil } from "../../utils/scrollToSection";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,35 +21,7 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    setSidebarOpen(false); // Close sidebar after navigation
-
-    const offset = 100;
-    const elementPosition = element.getBoundingClientRect().top;
-    const startPosition = window.scrollY;
-    const targetPosition = elementPosition + startPosition - offset;
-    const distance = targetPosition - startPosition;
-    const duration = 1500;
-    let start = null;
-
-    const easeInOutQuad = (t, b, c, d) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    };
-
-    const animation = (currentTime) => {
-      if (start === null) start = currentTime;
-      const timeElapsed = currentTime - start;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    };
-
-    requestAnimationFrame(animation);
+    scrollToSectionUtil(id, () => setSidebarOpen(false));
   };
 
   return (
