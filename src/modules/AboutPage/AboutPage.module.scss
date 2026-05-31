@@ -1,0 +1,130 @@
+@use "../../styles/_mq" as *;
+
+.page {
+  padding-top: 100px; // Account for fixed navbar
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg-primary);
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      background: linear-gradient(to right, #fff, #a5a5a5);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include mobile {
+        font-size: 2.5rem;
+      }
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .section {
+    margin-bottom: 80px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .sectionTitle {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      &::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+    .item {
+      position: relative;
+      margin-bottom: 48px;
+      padding-left: 24px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -29px;
+        top: 6px;
+        width: 9px;
+        height: 9px;
+        background: var(--accent);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.1);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .year {
+        font-size: 0.875rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .role {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+      }
+
+      .company {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+      }
+
+      .description {
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .bio {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+
+    p {
+      margin-bottom: 24px;
+    }
+  }
+}

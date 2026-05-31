@@ -1,11 +1,26 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import profileImg from "../../assets/sonalsai.jpeg";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { scrollToSection as scrollToSectionUtil } from "../../utils/scrollToSection";
+
+// Single source of truth for the in-page navigation links
+const navLinks = [
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+];
+
+const CONTACT_EMAIL = "sonalsai777@gmail.com";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +28,25 @@ const Navbar = () => {
       const threshold = heroHeight * 0.18;
       const isScrolled = window.scrollY > threshold;
       setScrolled(isScrolled);
+
+      // Active section detection
+      const sections = ["hero", "about", "skills", "projects"];
+      // Use a consistent offset (e.g. 1/3 viewport) to trigger change before top hits
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,36 +54,46 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    setSidebarOpen(false); // Close sidebar after navigation
-
-    const offset = 100;
-    const elementPosition = element.getBoundingClientRect().top;
-    const startPosition = window.scrollY;
-    const targetPosition = elementPosition + startPosition - offset;
-    const distance = targetPosition - startPosition;
-    const duration = 1500;
-    let start = null;
-
-    const easeInOutQuad = (t, b, c, d) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    };
-
-    const animation = (currentTime) => {
-      if (start === null) start = currentTime;
-      const timeElapsed = currentTime - start;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    };
-
-    requestAnimationFrame(animation);
+    if (location.pathname === "/") {
+      scrollToSectionUtil(id, () => setSidebarOpen(false));
+    } else {
+      setSidebarOpen(false);
+      navigate("/", { state: { scrollTo: id } });
+    }
   };
+
+  const handleContact = () => {
+    setSidebarOpen(false);
+    window.location.href = `mailto:${CONTACT_EMAIL}`;
+  };
+
+  // Links + CTA + hamburger are identical for both navbar variants
+  const renderControls = () => (
+    <>
+      <div className={styles.links}>
+        {navLinks.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`${styles.link} ${
+              activeSection === item.id ? styles.active : ""
+            }`}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      <button className={styles.cta} onClick={handleContact}>
+        Contact Me
+      </button>
+
+      {/* Mobile hamburger */}
+      <button className={styles.hamburger} onClick={() => setSidebarOpen(true)}>
+        <HiMenuAlt3 />
+      </button>
+    </>
+  );
 
   return (
     <>
@@ -67,36 +111,7 @@ const Navbar = () => {
             <span className={styles.logoText}>Sonal Sai</span>
           </div>
 
-          <div className={styles.links}>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className={styles.link}
-            >
-              Skills
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className={styles.link}
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className={styles.link}
-            >
-              About
-            </button>
-          </div>
-
-          <button className={styles.cta}>Contact Me</button>
-
-          {/* Mobile hamburger */}
-          <button
-            className={styles.hamburger}
-            onClick={() => setSidebarOpen(true)}
-          >
-            <HiMenuAlt3 />
-          </button>
+          {renderControls()}
         </div>
       </nav>
 
@@ -114,36 +129,7 @@ const Navbar = () => {
             <img src={profileImg} alt="Profile" className={styles.navProfile} />
           </div>
 
-          <div className={styles.links}>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className={styles.link}
-            >
-              Skills
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className={styles.link}
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className={styles.link}
-            >
-              About
-            </button>
-          </div>
-
-          <button className={styles.cta}>Contact Me</button>
-
-          {/* Mobile hamburger */}
-          <button
-            className={styles.hamburger}
-            onClick={() => setSidebarOpen(true)}
-          >
-            <HiMenuAlt3 />
-          </button>
+          {renderControls()}
         </div>
       </nav>
 
@@ -158,7 +144,7 @@ const Navbar = () => {
             />
             <div className={styles.profileInfo}>
               <span className={styles.sidebarName}>Sonal Sai</span>
-              <span className={styles.sidebarTitle}>Frontend Developer</span>
+              <span className={styles.sidebarTitle}>Full Stack Developer</span>
             </div>
           </div>
           <button
@@ -176,25 +162,18 @@ const Navbar = () => {
           >
             Home
           </button>
-          <button
-            onClick={() => scrollToSection("skills")}
-            className={styles.sidebarLink}
-          >
-            Skills
+          {navLinks.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={styles.sidebarLink}
+            >
+              {item.label}
+            </button>
+          ))}
+          <button className={styles.sidebarCta} onClick={handleContact}>
+            Contact Me
           </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className={styles.sidebarLink}
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className={styles.sidebarLink}
-          >
-            About
-          </button>
-          <button className={styles.sidebarCta}>Contact Me</button>
         </div>
       </div>
 

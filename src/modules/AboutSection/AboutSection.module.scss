@@ -1,0 +1,164 @@
+@use "../../styles/_mq" as *;
+
+.about {
+  padding: 0; // Remove default padding to allow Full Screen feel if needed, usually handled by container
+  height: auto;
+  min-height: 80vh; // Give it enough height for the animation
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  // Thin gradient divider
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 400px; // Ensure space for absolute positioning
+  }
+
+  .contentWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .greetingWrapper {
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .greeting {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    display: inline-block;
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
+  }
+
+  .textContent {
+    margin-top: 32px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; // Centered alignment
+    font-style: italic;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin-bottom: 24px;
+      opacity: 0.85;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center; // Centered
+    gap: 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px; // Pill shape
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+
+    &.btnPrimary {
+      background: var(--accent);
+      color: #000;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(var(--accent-rgb), 0.3);
+      }
+    }
+
+    .icon {
+      font-size: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .icon {
+      transform: translateX(4px);
+    }
+  }
+
+  // Background decoration
+  .background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    .blob {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(
+        circle,
+        rgba(var(--accent-rgb), 0.06) 0%,
+        transparent 70%
+      );
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(80px);
+    }
+  }
+}
