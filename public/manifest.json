@@ -1,7 +1,7 @@
 {
-  "name": "Sonal Sai - Frontend Developer Portfolio",
+  "name": "Sonal Sai - Full Stack & Frontend Developer",
   "short_name": "Sonal Sai",
-  "description": "Frontend Developer specializing in React, Angular, Node.js, and real-time web applications",
+  "description": "Sonal Sai is a full stack developer and frontend developer in Thrissur, India, building real-time React & Node.js web applications.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -9,9 +9,9 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
     },
     {
       "src": "/icon-192.png",

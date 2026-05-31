@@ -51,11 +51,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.badge}>Frontend Developer</div>
+          <div className={styles.badge}>Full Stack Developer</div>
           <h1 className={styles.title}>Solve, Build, Execute</h1>
           <p className={styles.description}>
-            I transform ideas and complex logic into clean, functional
-            experiences.
+            I’m a full-stack and frontend developer turning ideas and complex
+            logic into clean, fast, real-time experiences.
           </p>
           <motion.div
             className={styles.actions}
@@ -63,7 +63,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <button
+            <a
+              href={`${import.meta.env.BASE_URL}SonalSai_Full_Stack_Developer_Resume.pdf`}
+              download="SonalSai_Full_Stack_Developer_Resume.pdf"
               className={`${styles.btn} ${styles.btnPrimary}`}
               onMouseEnter={() => setIsDownloadHovered(true)}
               onMouseLeave={() => setIsDownloadHovered(false)}
@@ -80,7 +82,7 @@ const HeroSection = () => {
               >
                 <HiDownload />
               </motion.span>
-            </button>
+            </a>
             <button
               className={`${styles.btn} ${styles.btnSecondary}`}
               onMouseEnter={() => setIsProjectsHovered(true)}
@@ -138,7 +140,7 @@ const HeroSection = () => {
             <div className={styles.imageWrapper}>
               <img
                 src={profileImg}
-                alt="Sonal Sai"
+                alt="Sonal Sai - full stack and frontend developer"
                 className={styles.profileImage}
                 onError={(e) => {
                   e.target.style.display = "none";
@@ -158,7 +160,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             >
               <h3 className={styles.cardName}>Sonal Sai</h3>
-              <p className={styles.cardPosition}>Frontend Developer</p>
+              <p className={styles.cardPosition}>Full Stack Developer</p>
               <p className={styles.cardExperience}>
                 {experience} Years Experience
               </p>

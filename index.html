@@ -4,28 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- SPA deep-link decode — pairs with public/404.html so routes like
+         /about resolve on GitHub Pages instead of returning a hard 404. -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+
     <!-- Primary Meta Tags -->
-    <title>Sonal Sai - Frontend Developer</title>
-    <meta name="title" content="Sonal Sai - Frontend Developer" />
+    <title>Sonal Sai - Full Stack &amp; Frontend Developer</title>
     <meta
       name="description"
-      content="Frontend Developer specializing in React, Angular, Node.js, and real-time web applications. Experienced in WebRTC, WebSockets, and building interactive user experiences with modern web technologies."
+      content="Sonal Sai is a full stack developer and frontend developer in Thrissur, India, building real-time React &amp; Node.js web apps. View projects &amp; résumé."
     />
     <meta
       name="keywords"
-      content="Sonal Sai, Frontend Developer, React Developer, Angular Developer, Node.js, WebRTC, WebSockets, Real-time Applications, JavaScript, TypeScript, Full Stack Developer, Web Developer Portfolio"
+      content="full stack developer, frontend developer, front end developer, full-stack developer, React developer, Node.js developer, Angular developer, JavaScript developer, web developer, Sonal Sai, Thrissur, Kerala, India, real-time web applications, WebRTC, WebSockets"
     />
     <meta name="author" content="Sonal Sai" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.sonalsai.site/" />
 
     <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Manifest for PWA -->
     <link rel="manifest" href="/manifest.json" />
@@ -33,14 +53,20 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.sonalsai.site/" />
-    <meta property="og:title" content="Sonal Sai - Frontend Developer" />
     <meta
-      property="og:description"
-      content="Frontend Developer specializing in React, Angular, Node.js, and real-time web applications. Experienced in WebRTC, WebSockets, and building interactive user experiences."
+      property="og:title"
+      content="Sonal Sai - Full Stack &amp; Frontend Developer"
     />
     <meta
-      property="og:image"
-      content="https://www.sonalsai.site/og-image.jpg"
+      property="og:description"
+      content="Sonal Sai is a full stack developer and frontend developer in Thrissur, India, building real-time React &amp; Node.js web apps. View projects &amp; résumé."
+    />
+    <meta property="og:image" content="https://www.sonalsai.site/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sonal Sai - Full Stack &amp; Frontend Developer"
     />
     <meta property="og:site_name" content="Sonal Sai Portfolio" />
     <meta property="og:locale" content="en_US" />
@@ -48,14 +74,18 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.sonalsai.site/" />
-    <meta name="twitter:title" content="Sonal Sai - Frontend Developer" />
     <meta
-      name="twitter:description"
-      content="Frontend Developer specializing in React, Angular, Node.js, and real-time web applications. Experienced in WebRTC, WebSockets, and building interactive user experiences."
+      name="twitter:title"
+      content="Sonal Sai - Full Stack &amp; Frontend Developer"
     />
     <meta
-      name="twitter:image"
-      content="https://www.sonalsai.site/og-image.jpg"
+      name="twitter:description"
+      content="Sonal Sai is a full stack developer and frontend developer in Thrissur, India, building real-time React &amp; Node.js web apps."
+    />
+    <meta name="twitter:image" content="https://www.sonalsai.site/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Sonal Sai - Full Stack &amp; Frontend Developer"
     />
     <meta name="twitter:creator" content="@sonalsai" />
 
@@ -63,45 +93,102 @@
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data: Person -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://www.sonalsai.site/#person",
         "name": "Sonal Sai",
-        "jobTitle": "Frontend Developer",
+        "jobTitle": [
+          "Full Stack Developer",
+          "Frontend Developer",
+          "Junior Software Engineer"
+        ],
         "url": "https://www.sonalsai.site/",
+        "image": "https://www.sonalsai.site/og-image.jpg",
+        "email": "mailto:sonalsai777@gmail.com",
+        "description": "Frontend-focused full stack developer building React and Angular interfaces backed by Node.js, Express.js, Python and FastAPI, with real-time features using WebRTC and WebSockets.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Thrissur",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "AOT Technologies"
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full Stack Developer",
+          "skills": "React, TypeScript, JavaScript, Angular, Node.js, Express.js, Python, FastAPI, WebRTC, WebSockets, MongoDB, PostgreSQL, Redis, Docker"
+        },
         "sameAs": [
           "https://github.com/sonalsai",
           "https://linkedin.com/in/sonalsai"
         ],
         "knowsAbout": [
+          "Full Stack Development",
+          "Frontend Development",
           "React.js",
           "Angular",
-          "Node.js",
-          "JavaScript",
           "TypeScript",
+          "JavaScript",
+          "Node.js",
+          "Express.js",
+          "Python",
+          "FastAPI",
           "WebRTC",
           "WebSockets",
-          "Real-time Applications",
-          "Frontend Development",
-          "Full Stack Development"
+          "Real-time Web Applications",
+          "MongoDB",
+          "PostgreSQL",
+          "Redis",
+          "Docker"
         ],
-        "description": "Frontend Developer specializing in React, Angular, Node.js, and real-time web applications",
         "alumniOf": {
           "@type": "EducationalOrganization",
-          "name": "Your University"
+          "name": "Maharaja's Technological Institute (MTI), Thrissur"
         }
       }
     </script>
 
-    <!-- Preconnect for Performance -->
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sonal Sai Portfolio",
+        "url": "https://www.sonalsai.site/",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.sonalsai.site/#person"
+        }
+      }
+    </script>
+
+    <!-- Fonts (non-blocking load to protect LCP/FCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+      />
+    </noscript>
 
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

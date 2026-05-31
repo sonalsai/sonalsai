@@ -7,4 +7,12 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+:root {
+  --accent: #{$primary-neon};
+  --accent-rgb: 255, 255, 255;
+  --text-primary: #{$main-text};
+  --text-secondary: #{$muted-text};
+  --bg-primary: #{$main-bg};
+}
+
 // Global utility classes can go here if needed, but prefer modules
