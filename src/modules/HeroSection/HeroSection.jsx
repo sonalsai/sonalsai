@@ -52,7 +52,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.badge}>Full Stack Developer</div>
-          <h1 className={styles.title}>Solve, Build, Execute</h1>
+          <h1 className={styles.title}>
+            Sonal Sai — Full Stack &amp; Frontend Developer
+          </h1>
           <p className={styles.description}>
             I’m a full-stack and frontend developer turning ideas and complex
             logic into clean, fast, real-time experiences.

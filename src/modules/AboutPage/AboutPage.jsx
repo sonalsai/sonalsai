@@ -8,7 +8,7 @@ const AboutPage = () => {
   useDocumentMeta({
     title: "About Sonal Sai - Full Stack & Frontend Developer",
     description:
-      "Sonal Sai is a full stack developer and frontend developer in Thrissur, Kerala, building real-time React web apps at AOT Technologies.",
+      "Learn about Sonal Sai, a frontend-focused full stack developer in Thrissur, Kerala, his experience at AOT Technologies, and his computer engineering education.",
     path: "/about",
   });
 
