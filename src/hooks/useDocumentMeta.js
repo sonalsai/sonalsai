@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://www.sonalsai.site";
+const SITE_URL = "https://sonalsai.vercel.app";
 
 /**
  * Upsert a <meta> tag in <head> (updates the existing tag rather than
