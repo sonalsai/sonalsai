@@ -126,7 +126,7 @@ const Navbar = () => {
             className={styles.logoWrapper}
             onClick={() => scrollToSection("hero")}
           >
-            <img src={profileImg} alt="Profile" className={styles.navProfile} />
+            <img src={profileImg} alt="Sonal Sai" className={styles.navProfile} />
           </div>
 
           {renderControls()}
@@ -139,7 +139,7 @@ const Navbar = () => {
           <div className={styles.profileWrapper}>
             <img
               src={profileImg}
-              alt="Profile"
+              alt="Sonal Sai"
               className={styles.sidebarProfile}
             />
             <div className={styles.profileInfo}>

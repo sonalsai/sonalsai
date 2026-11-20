@@ -15,7 +15,7 @@ const LandingPage = () => {
   useDocumentMeta({
     title: "Sonal Sai - Full Stack & Frontend Developer",
     description:
-      "Sonal Sai is a full stack developer and frontend developer in Thrissur, India, building real-time React & Node.js web apps. View projects & résumé.",
+      "Sonal Sai is a frontend-focused full stack developer in Thrissur, Kerala, building accessible React interfaces and real-time applications with Node.js, Python, and WebSockets.",
     path: "/",
   });
 
